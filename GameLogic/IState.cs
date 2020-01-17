@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class MenuState :IState
+    interface IState
     {
+        void Initialize();
+        void Update();
+        void Exit();
     }
 }
