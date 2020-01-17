@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class Map : IMap
+    interface IMap
     {
     }
 }

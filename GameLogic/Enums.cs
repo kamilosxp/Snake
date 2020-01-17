@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class Map : IMap
+    enum Direction
     {
+        LEFT,
+        RIGHT,
+        UP,
+        DOWN
     }
 }

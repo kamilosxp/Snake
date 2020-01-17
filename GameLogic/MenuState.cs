@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class MenuState :IState
+    class MenuState : IState
     {
+        public void Exit()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Initialize()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

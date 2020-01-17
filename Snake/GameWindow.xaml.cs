@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Snake
 {
     /// <summary>
-    /// Interaction logic for MenuWindow.xaml
+    /// Interaction logic for GameWindow.xaml
     /// </summary>
-    public partial class MenuWindow : Window
+    public partial class GameWindow : Window
     {
-        public MenuWindow()
+        public GameWindow()
         {
             InitializeComponent();
-        }
-
-        private void exitClick(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void rankingClick(object sender, RoutedEventArgs e)
-        {
-            RankingWindow rankingWindow = new RankingWindow();
-            rankingWindow.Show();
         }
     }
 }

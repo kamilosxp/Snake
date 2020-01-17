@@ -13,3 +13,7 @@ C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.exe
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.pdb
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\MenuWindow.g.cs
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\MenuWindow.baml
+C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\GameWindow.g.cs
+C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\RankingWindow.g.cs
+C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\GameWindow.baml
+C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\RankingWindow.baml
