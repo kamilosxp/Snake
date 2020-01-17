@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake", "Snake\Snake.csproj", "{6C05BE14-38F2-4AA4-A828-26AE9E660DE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLogic", "GameLogic\GameLogic.csproj", "{BB2F4F76-021A-4A0C-A486-EA93C3E3290D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLogicTests", "GameLogicTests\GameLogicTests.csproj", "{F8BCB265-07C8-479C-B639-5BA1AAD9F34E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{6C05BE14-38F2-4AA4-A828-26AE9E660DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C05BE14-38F2-4AA4-A828-26AE9E660DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C05BE14-38F2-4AA4-A828-26AE9E660DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB2F4F76-021A-4A0C-A486-EA93C3E3290D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB2F4F76-021A-4A0C-A486-EA93C3E3290D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB2F4F76-021A-4A0C-A486-EA93C3E3290D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB2F4F76-021A-4A0C-A486-EA93C3E3290D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8BCB265-07C8-479C-B639-5BA1AAD9F34E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8BCB265-07C8-479C-B639-5BA1AAD9F34E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8BCB265-07C8-479C-B639-5BA1AAD9F34E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8BCB265-07C8-479C-B639-5BA1AAD9F34E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
