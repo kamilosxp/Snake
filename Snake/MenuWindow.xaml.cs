@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace Snake
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MenuWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MenuWindow : Window
     {
-        public MainWindow()
+        public MenuWindow()
         {
             InitializeComponent();
+        }
+
+        private void exitClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
