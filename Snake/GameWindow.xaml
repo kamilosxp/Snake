@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Snake"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800">
+        Title="GameWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen"
+        KeyDown="captureKeyDown">
     <Grid>
         
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Background="Gray">
+            <TextBlock Margin="15,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold" Foreground="White">Score: </TextBlock>
+        </StackPanel>
+
+        <Canvas Name="gamePlace" Grid.Row="1"></Canvas>
+
     </Grid>
 </Window>

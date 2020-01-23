@@ -27,9 +27,9 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-
-            <Button Grid.Row="1" Margin="5">Start</Button>
-            <Button Grid.Row="2" Margin="5" Click="rankingClick">Ranking</Button>
+            <Button Grid.Row="0" Margin="5" Click="gameClick">Start</Button>
+            <Button Grid.Row="1" Margin="5" Click="rankingClick">Ranking</Button>
+            <Button Grid.Row="2" Margin="5" Click="gameClick">Ustawienia</Button>
             <Button Grid.Row="3" Margin="5" Click="exitClick">Wyjście</Button>
         </Grid>
 

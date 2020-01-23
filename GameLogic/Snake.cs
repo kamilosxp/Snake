@@ -9,7 +9,8 @@ namespace GameLogic
 {
     class Snake
     {
-        private Vector2 _position;
-        private int _lenght;
+        protected Vector2 Position;
+        protected int Lenght;
+        protected List<SnakePart> SnakeParts;
     }
 }

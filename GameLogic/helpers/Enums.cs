@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class StateManager
+    public enum Direction
     {
+        Left,
+        Right,
+        Up,
+        Down
     }
 }

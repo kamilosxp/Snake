@@ -35,5 +35,11 @@ namespace Snake
             RankingWindow rankingWindow = new RankingWindow();
             rankingWindow.Show();
         }
+
+        private void gameClick(object sender, RoutedEventArgs e)
+        {
+            GameWindow gameWindow = new GameWindow();
+            gameWindow.Show();
+        }
     }
 }
