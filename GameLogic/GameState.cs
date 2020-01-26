@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,12 +8,26 @@ using System.Windows.Threading;
 
 namespace GameLogic
 {
-    public class GameState : IState
+    public class GameState : IState, INotifyPropertyChanged
     {
         private int _points;
+
+        public float Points
+        {
+            get { return _points; }
+            set
+            {
+                _points = (int)value;
+                OnPropertyChanged(new PropertyChangedEventArgs("Points"));
+            }
+        }
+
         private DispatcherTimer _gameTimer;
-        private Player _player;
+        public Player Player { get; set; }
+        public Bonus Bonus { get; set; }
         private Direction _direction;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public GameState()
         {
@@ -20,13 +35,16 @@ namespace GameLogic
             _gameTimer = new DispatcherTimer();
             _gameTimer.Tick += new EventHandler(Loop);
 
-            _gameTimer.Interval = new TimeSpan(2000000);
+            _gameTimer.Interval = new TimeSpan(200000);
             _gameTimer.Start();
 
 
             //Create player
-            _player = new Player();
+            Player = new Player();
             _direction = Direction.Right;
+
+            this.Bonus = new Bonus();
+            Points = 0;
 
         }
         public void Exit()
@@ -41,9 +59,24 @@ namespace GameLogic
 
         public void Update()
         {
-            _player.Move(_direction);
-            Console.WriteLine(_player.GetHeadPosition().ToString());
-            Console.WriteLine("Test");
+            Player.Move(_direction);
+            if (Player.SnakeParts.Last().GetPosition() == Bonus.GetBonusPosition())
+            {
+                Bonus.ChangePosition();
+                Player.AddSnakePart(_direction);
+                Points++;
+            }
+
+            //Console.WriteLine(Player.GetHeadPosition().ToString());
+            //Console.WriteLine("Test");
+        }
+
+        public void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, e);
+            }
         }
 
         public void Loop(object sender, EventArgs e)

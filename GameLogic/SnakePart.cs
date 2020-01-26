@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -8,9 +9,39 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class SnakePart
+    public class SnakePart : INotifyPropertyChanged
     {
         protected Vector2 Position;
+        private float _PosY, _PosX;
+
+        public float PosY
+        {
+            get { return _PosY; }
+            set
+            {
+                _PosY = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("PosY"));
+            }
+        }
+
+        public float PosX
+        {
+            get { return _PosX; }
+            set
+            {
+                _PosX = value;
+                OnPropertyChanged(new PropertyChangedEventArgs("PosX"));
+            }
+        }
+        public void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, e);
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public SnakePart(Vector2 lastItemPosition, Direction direction)
         {
@@ -18,14 +49,26 @@ namespace GameLogic
             {
                 case Direction.Left:
                 {
-                    Position.X = lastItemPosition.X + 30f;
-                    Position.Y = lastItemPosition.Y;
+                    PosX = lastItemPosition.X + 10f;
+                    PosY = lastItemPosition.Y;
                     break;
                 }
                 case Direction.Right:
                 {
-                    Position.X = lastItemPosition.X + 30f;
-                    Position.Y = lastItemPosition.Y;
+                    PosX = lastItemPosition.X - 10f;
+                    PosY = lastItemPosition.Y;
+                        break;
+                }
+                case Direction.Up:
+                {
+                    PosX = lastItemPosition.X;
+                    PosY = lastItemPosition.Y - 10f;
+                    break;
+                }
+                case Direction.Down:
+                {
+                    PosX = lastItemPosition.X;
+                    PosY = lastItemPosition.Y + 10f;
                     break;
                 }
                 default:
@@ -39,17 +82,17 @@ namespace GameLogic
 
         public Vector2 GetPosition()
         {
-            return Position;
+            return new Vector2(PosX, PosY);
         }
 
         public void SetXPosition(float value)
         {
-            Position.X = value;
+            PosX = value;
         }
 
         public void SetYPosition(float value)
         {
-            Position.Y = value;
+            PosY = value;
         }
     }
 }

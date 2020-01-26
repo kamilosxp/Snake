@@ -8,25 +8,21 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class Player : Snake, IPlayer  
+    public class Player : Snake, IPlayer
     {
+        public ObservableCollection<SnakePart> SnakeParts { get; set; }
+
+
         public Player()
         {
             this.Lenght = 0;
             this.Position.X = 0;
             this.Position.Y = 0;
-            SnakeParts = new List<SnakePart>
+            this.PosX = 250;
+            SnakeParts = new ObservableCollection<SnakePart>
             {
                 new SnakePart(new Vector2(0, 0), Direction.Right)
             };
-
-        }
-
-        public Player(int x = 0, int y = 0, int lenght = 0)
-        {
-            this.Lenght = lenght;
-            this.Position.X = x;
-            this.Position.Y = y;
 
         }
 
@@ -39,33 +35,46 @@ namespace GameLogic
         {
             return SnakeParts[0].GetPosition();
         }
+
+        public void AddSnakePart(Direction direction)
+        {
+            SnakeParts.Insert(0, (new SnakePart(SnakeParts.Last().GetPosition(), direction)));
+        }
         public void Move(Direction direction)
         {
             switch (direction)
             {
                 case Direction.Left:
-                    foreach (var part in SnakeParts)
-                    {
-                        part.SetXPosition(part.GetPosition().X - 30f);
-                    }
+                    SnakeParts.First().PosX = SnakeParts.Last().PosX - 10f;
+                    SnakeParts.First().PosY = SnakeParts.Last().PosY;
+
+                    SnakeParts.Add(SnakeParts.First());
+                    SnakeParts.RemoveAt(0);
+
                     break;
                 case Direction.Right:
-                    foreach (var part in SnakeParts)
-                    {
-                        part.SetXPosition(part.GetPosition().X + 30f);
-                    }
+                    SnakeParts.First().PosX = SnakeParts.Last().PosX + 10f;
+                    SnakeParts.First().PosY = SnakeParts.Last().PosY;
+
+                    SnakeParts.Add(SnakeParts.First());
+                    SnakeParts.RemoveAt(0);
+
                     break;
                 case Direction.Up:
-                    foreach (var part in SnakeParts)
-                    {
-                        part.SetYPosition(part.GetPosition().Y - 30f);
-                    }
+                    SnakeParts.First().PosX = SnakeParts.Last().PosX;
+                    SnakeParts.First().PosY = SnakeParts.Last().PosY - 10f;
+
+                    SnakeParts.Add(SnakeParts.First());
+                    SnakeParts.RemoveAt(0);
+
                     break;
                 case Direction.Down:
-                    foreach (var part in SnakeParts)
-                    {
-                        part.SetYPosition(part.GetPosition().Y + 30f);
-                    }
+                    SnakeParts.First().PosX = SnakeParts.Last().PosX;
+                    SnakeParts.First().PosY = SnakeParts.Last().PosY + 10f;
+
+                    SnakeParts.Add(SnakeParts.First());
+                    SnakeParts.RemoveAt(0);
+
                     break;
             }
         }

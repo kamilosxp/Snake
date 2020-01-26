@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace GameLogic
 {
-    class Snake
+    public class Snake
     {
         protected Vector2 Position;
         protected int Lenght;
-        protected List<SnakePart> SnakeParts;
+        public int PosX { get; set; }
     }
 }

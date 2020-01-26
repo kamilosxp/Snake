@@ -8,10 +8,10 @@ Simple clone of the classic Snake game
  
 ### Participating in the project
  ##### Kamil Rudek
- - Game structure designed :tw-2714:
- - GameLogic project coded :tw-2714:
- - Simple GUI :tw-2714:
+ - Game structure designed :heavy_check_mark:
+ - GameLogic project coded :heavy_check_mark:
+ - Simple GUI :heavy_check_mark:
  ##### Jarosław Wandas
- - Unit tests :tw-2716:
- - Documentation :tw-2716:
- - Ranking class :tw-2716:
+ - Unit tests :x:
+ - Documentation :x:
+ - Ranking class :x:

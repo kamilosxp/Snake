@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Snake"
         mc:Ignorable="d"
+        xmlns:gl="clr-namespace:GameLogic;assembly=GameLogic"
         Title="GameWindow" Height="600" Width="800" WindowStartupLocation="CenterScreen"
         KeyDown="captureKeyDown">
     <Grid>
@@ -19,9 +20,32 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Background="Gray">
             <TextBlock Margin="15,0,0,0" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold" Foreground="White">Score: </TextBlock>
+            <TextBlock VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold" Foreground="White" Text="{Binding Points}"/>
         </StackPanel>
 
-        <Canvas Name="gamePlace" Grid.Row="1"></Canvas>
+        <Canvas Name="gamePlace" Grid.Row="1">
+            <ItemsControl ItemsSource="{Binding Path=Player.SnakeParts}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Canvas>
+                            <Rectangle Name="test"
+                                Canvas.Left="{Binding PosX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                Canvas.Top="{Binding PosY, UpdateSourceTrigger=PropertyChanged}"
+                                Width="10"
+                                Height="10"
+                                Fill="Blue" />
+                        </Canvas>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Rectangle
+                       Canvas.Left="{Binding Bonus.BonusPosX, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                       Canvas.Top="{Binding Bonus.BonusPosY, UpdateSourceTrigger=Default}"
+                       Width="10"
+                       Height="10"
+                       Fill="Green" />
+        </Canvas>
 
     </Grid>
 </Window>

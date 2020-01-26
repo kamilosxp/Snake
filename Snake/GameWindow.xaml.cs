@@ -26,7 +26,7 @@ namespace Snake
             InitializeComponent();
 
             _game = new GameState();
-
+            DataContext = _game;
         }
 
         private void captureKeyDown(object sender, KeyEventArgs e)
@@ -39,7 +39,8 @@ namespace Snake
                 _game.ChangeDirection(Direction.Up);
             else if(e.Key == Key.Down)
                 _game.ChangeDirection(Direction.Down);
-
+            else if (e.Key == Key.Enter)
+                _game.Player.AddSnakePart(Direction.Right);
         }
     }
 }
