@@ -56,8 +56,8 @@ namespace GameLogic
         {
             Random random = new Random();
 
-            BonusPosY = random.Next(0, 52) * 10;
-            BonusPosX = random.Next(0, 80) * 10;
+            BonusPosY = random.Next(0, 46) * 10;
+            BonusPosX = random.Next(0, 74) * 10;
 
             Console.WriteLine($"{BonusPosX}  {BonusPosY}");
         }

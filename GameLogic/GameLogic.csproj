@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Bonus.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="helpers\Consts.cs" />
     <Compile Include="helpers\Enums.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="interfaces\IMap.cs" />
