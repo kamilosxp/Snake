@@ -12,24 +12,24 @@ namespace GameLogic
     public class SnakePart : INotifyPropertyChanged
     {
         protected Vector2 Position;
-        private float _PosY, _PosX;
+        private float _posY, _posX;
 
         public float PosY
         {
-            get { return _PosY; }
+            get => _posY;
             set
             {
-                _PosY = value;
+                _posY = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("PosY"));
             }
         }
 
         public float PosX
         {
-            get { return _PosX; }
+            get => _posX;
             set
             {
-                _PosX = value;
+                _posX = value;
                 OnPropertyChanged(new PropertyChangedEventArgs("PosX"));
             }
         }

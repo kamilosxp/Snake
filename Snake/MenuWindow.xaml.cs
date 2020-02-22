@@ -25,18 +25,18 @@ namespace Snake
             InitializeComponent();
         }
 
-        private void exitClick(object sender, RoutedEventArgs e)
+        private void ExitClick(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
-        private void rankingClick(object sender, RoutedEventArgs e)
+        private void RankingClick(object sender, RoutedEventArgs e)
         {
             RankingWindow rankingWindow = new RankingWindow();
             rankingWindow.Show();
         }
 
-        private void gameClick(object sender, RoutedEventArgs e)
+        private void GameClick(object sender, RoutedEventArgs e)
         {
             GameWindow gameWindow = new GameWindow();
             gameWindow.Show();

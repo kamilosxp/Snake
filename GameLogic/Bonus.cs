@@ -14,7 +14,7 @@ namespace GameLogic
 
         public float BonusPosY
         {
-            get { return _PosY; }
+            get => _PosY;
             set
             {
                 _PosY = value;
@@ -24,7 +24,7 @@ namespace GameLogic
 
         public float BonusPosX
         {
-            get { return _PosX; }
+            get => _PosX;
             set
             {
                 _PosX = value;
@@ -58,8 +58,6 @@ namespace GameLogic
 
             BonusPosY = random.Next(0, 46) * 10;
             BonusPosX = random.Next(0, 74) * 10;
-
-            Console.WriteLine($"{BonusPosX}  {BonusPosY}");
         }
     }
 }

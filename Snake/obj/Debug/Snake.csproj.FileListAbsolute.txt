@@ -8,7 +8,6 @@ C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake_MarkupCompile.lref
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.g.resources
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.Properties.Resources.resources
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.csproj.GenerateResource.cache
-C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.exe
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\Snake.pdb
 C:\Users\rudek\source\repos\Snake\Snake\obj\Debug\MenuWindow.g.cs

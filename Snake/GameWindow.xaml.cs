@@ -29,7 +29,7 @@ namespace Snake
             DataContext = _game;
         }
 
-        private void captureKeyDown(object sender, KeyEventArgs e)
+        private void CaptureKeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Left)
                 _game.ChangeDirection(Direction.Left);

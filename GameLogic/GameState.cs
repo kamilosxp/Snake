@@ -17,7 +17,7 @@ namespace GameLogic
 
         public float Points
         {
-            get { return _points; }
+            get => _points;
             set
             {
                 _points = (int)value;
@@ -25,7 +25,7 @@ namespace GameLogic
             }
         }
 
-        private DispatcherTimer _gameTimer;
+        private readonly DispatcherTimer _gameTimer;
         public Player Player { get; set; }
         public Bonus Bonus { get; set; }
         private Direction _direction;
@@ -64,6 +64,12 @@ namespace GameLogic
         public void Update()
         {
             Player.Move(_direction);
+
+            Collisions();
+        }
+
+        public void Collisions()
+        {
             if (Player.SnakeParts.Last().GetPosition() == Bonus.GetBonusPosition())
             {
                 Bonus.ChangePosition();
@@ -86,14 +92,9 @@ namespace GameLogic
 
             foreach (var z in _snakePartsToColision)
             {
-                if(Player.SnakeParts.Last().GetPosition() == z.GetPosition())
+                if (Player.SnakeParts.Last().GetPosition() == z.GetPosition())
                     Restart();
             }
-
-
-
-            Console.WriteLine(Player.GetHeadPosition().ToString());
-            //Console.WriteLine("Test");
         }
 
         public void Restart()
@@ -101,8 +102,7 @@ namespace GameLogic
             _gameSpeed = Consts.GameSpeed;
             _gameTimer.Interval = new TimeSpan(Consts.GameSpeed);
             Bonus.ChangePosition();
-            //Player.SnakeParts.Clear();
-            //Player.SetPlayerPos(new Vector2(0,0));
+
 
             var test = Player.SnakeParts.Last();
             Player.SnakeParts.Clear();
@@ -124,12 +124,13 @@ namespace GameLogic
         public void Loop(object sender, EventArgs e)
         {
             Update();
-
         }
-
+        /// <summary>
+        /// Set player direction
+        /// </summary>
+        /// <param name="direction">player direction</param>
         public void ChangeDirection(Direction direction)
         {
-            Console.WriteLine("Changed Direciton");
             _direction = direction;
         }
     }
